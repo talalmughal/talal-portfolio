@@ -10,11 +10,9 @@ export const ReviewsCarousal = () => {
       document.onkeydown = function (event) {
         switch (event.keyCode) {
           case 37:
-            console.log("Left key");
             emblaApi?.scrollPrev(true);
             break;
           case 39:
-            console.log("Right key");
             emblaApi?.scrollNext(true);
             break;
         }
@@ -24,7 +22,7 @@ export const ReviewsCarousal = () => {
   return (
     <>
       <button
-        className="absolute -left-14 w-10 h-10 rounded-full hover:bg-white/40 flex items-center justify-center"
+        className="absolute -left-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
         onClick={() => emblaApi?.scrollPrev(true)}
       >
         <svg
@@ -54,12 +52,19 @@ export const ReviewsCarousal = () => {
                 {review?.comment}
               </span>
 
-              <span className="mt-8 text-lg font-medium">{review?.person}</span>
+              <div className="mt-8 flex flex-row items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={review?.Icon}
+                  alt="logo"
+                  className="w-14 h-14 rounded-full"
+                />
 
-              <div className="flex flex-row gap-2">
-                {review?.Icon && <span>{review?.Icon}</span>}
+                <div className="flex flex-col gap-2">
+                  <span className="text-lg font-medium">{review?.person}</span>
 
-                <span>{review?.origin}</span>
+                  <span>{review?.origin}</span>
+                </div>
               </div>
             </div>
           ))}
@@ -67,7 +72,7 @@ export const ReviewsCarousal = () => {
       </div>
 
       <button
-        className="absolute -right-14 w-10 h-10 rounded-full hover:bg-white/40 flex items-center justify-center"
+        className="absolute -right-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
         onClick={() => emblaApi?.scrollNext(true)}
       >
         <svg

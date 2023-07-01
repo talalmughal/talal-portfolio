@@ -20,7 +20,7 @@ export const ProjectsCarousal = () => {
                 i === 0 && "ml-5"
               }  rounded-lg h-72 w-48 sm:h-96 sm:w-64 2xl:h-[512px] 2xl:w-96 relative`}
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(29, 40, 57, 0) 0%, 
+                backgroundImage: `linear-gradient(180deg, rgba(29, 40, 57, 0) 40%, 
                 rgba(29, 40, 57, 0.49) 55.57%, #080F1B 98.32%), url(${project?.cover})`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",

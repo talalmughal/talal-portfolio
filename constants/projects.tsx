@@ -1,7 +1,7 @@
 export const projects = [
   // Hone
   {
-    cover: "img/hone.png",
+    cover: "img/projects/hone.png",
     title: "Hone",
     description: `Hone provides you the tools to achieve ultimate
      gameplay & boost FPS by rescuing your PC from bloated software`,
@@ -10,7 +10,7 @@ export const projects = [
 
   // Mantle
   {
-    cover: "/img/mantle.png",
+    cover: "/img/projects/mantle.png",
     title: "Mantle",
     description: `A universal cape system which works on all major clients 
     and operating systems and Minecraft versions, without disrupt your 
@@ -20,7 +20,7 @@ export const projects = [
   
     // CureVision
     {
-      cover: "/img/cure-vision.png",
+      cover: "/img/projects/cure-vision.png",
       title: "Cure Vision",
       description: `The new era of wound analysis. The only MDR-approved & 
       disinfectable system for 3D wound analysis exact measurement of size and depth.`,
@@ -29,7 +29,7 @@ export const projects = [
 
   // Ghast
   {
-    cover: "/img/ghast.png",
+    cover: "/img/projects/ghast.png",
     title: "Ghast",
     description: `Keep getting comboed? Ghast, with years of research and testing, 
     streamlines the way your computer sends & receives information for Minecraft PvP.`,
@@ -38,7 +38,7 @@ export const projects = [
 
   // My Top Dollar
   {
-    cover: "/img/my-top-dollar.png",
+    cover: "/img/projects/my-top-dollar.png",
     title: "My Top Dollar",
     description: `Hassle free car selling, helping you get TOP DOLLAR! Receive 
     personalized quotations for your car from dealers near you, from the comfort 
@@ -48,7 +48,7 @@ export const projects = [
   
     // i-sight
     {
-      cover: "/img/i-sight.png",
+      cover: "/img/projects/i-sight.png",
       title: "i-sight",
       description: `Effortlessly conduct trading on a fresh methodology with
       the newly introduced crypto exhange and stocks investment.`,
@@ -57,7 +57,7 @@ export const projects = [
 
   // June Care
   {
-    cover: "/img/june-care.png",
+    cover: "/img/projects/june-care.png",
     title: "June Care",
     description: `Childcare for Families, by Families. Connecting those who
     need childcare with stay-at-home parents who can care for their kids.`,
