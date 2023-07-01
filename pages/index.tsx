@@ -1,5 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { Page1, Page2, Page3, Page4, Page5, Page6 } from "@/components";
+import {
+  Page1,
+  Page2,
+  Page3,
+  Page4,
+  Page5,
+  Page6,
+  Page7,
+} from "@/components/page";
 
 export default function Home() {
   return (
@@ -22,6 +30,9 @@ export default function Home() {
 
         {/* page-06 my projects */}
         <Page6 />
+
+        {/* page-07 contact me */}
+        <Page7 />
       </div>
     </div>
   );

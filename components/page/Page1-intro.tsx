@@ -1,4 +1,4 @@
-import { FooterLinks } from "./FooterLinks";
+import { FooterLinks } from "../helper/FooterLinks";
 
 /* eslint-disable @next/next/no-img-element */
 export const Page1 = () => {
@@ -38,7 +38,11 @@ export const Page1 = () => {
               link="https://www.linkedin.com/in/talal-nasir-761a26219/"
             />
 
-            <FooterLinks Icon="/svg/discord.svg" alt="discord" link="talal1994"/>
+            <FooterLinks
+              Icon="/svg/discord.svg"
+              alt="discord"
+              link="talal1994"
+            />
           </div>
 
           <span>Download my resume (PDF 469KB)</span>

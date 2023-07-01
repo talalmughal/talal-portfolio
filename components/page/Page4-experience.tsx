@@ -1,5 +1,5 @@
 import { jobs } from "@/constants/jobs";
-import { Job } from "./Job";
+import { Job } from "../helper/Job";
 
 export const Page4 = () => {
   return (

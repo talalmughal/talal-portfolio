@@ -1,4 +1,4 @@
-import { ProjectsCarousal } from "./ProjectsCarousel";
+import { ProjectsCarousal } from "../helper/ProjectsCarousel";
 
 export const Page6 = () => {
   return (
