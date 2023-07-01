@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Page1, Page2, Page3, Page4, Page5 } from "@/components";
-import { useState } from "react";
+import { Page1, Page2, Page3, Page4, Page5, Page6 } from "@/components";
 
 export default function Home() {
   return (
@@ -20,6 +19,9 @@ export default function Home() {
 
         {/* page-05 my reviews */}
         <Page5 />
+
+        {/* page-06 my projects */}
+        <Page6 />
       </div>
     </div>
   );
