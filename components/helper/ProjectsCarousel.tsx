@@ -2,7 +2,11 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { projects } from "@/constants/projects";
 
-export const ProjectsCarousal = () => {
+interface Props {
+  secondaryText: string;
+}
+
+export const ProjectsCarousal = ({ secondaryText }: Props) => {
   const [emblaRef] = useEmblaCarousel({ loop: true });
 
   return (
@@ -27,7 +31,9 @@ export const ProjectsCarousal = () => {
                 backgroundSize: "100% 100%",
               }}
             >
-              <div className="flex flex-col gap-3 absolute bottom-0 p-6 xl:p-10">
+              <div
+                className={`flex flex-col gap-3 absolute bottom-0 p-6 xl:p-10 ${secondaryText}`}
+              >
                 <span className="text-xl font-semibold">{project?.title}</span>
 
                 <span className="text-xs font-medium">

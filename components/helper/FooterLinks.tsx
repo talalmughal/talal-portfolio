@@ -34,7 +34,7 @@ export const FooterLinks = ({ Icon, alt, link }: Props) => {
             });
           }}
         >
-          <img src={Icon} className="w-6 cursor-pointer" alt={alt} />
+          <img src={Icon} className="w-6 h-6 cursor-pointer" alt={alt} />
         </button>
       )}
 

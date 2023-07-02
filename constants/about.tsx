@@ -1,7 +1,8 @@
 export const general = `
     I enjoy working closely with design teams to precisely translate their
     designs right down to the last pixel, bringing the process to life just
-    as they intended them to be. (More to add, related to backend)
+    as they intended them to be, while maintaining the functionalities at 
+    their finest.
 `;
 
 export const technical = `
@@ -21,4 +22,4 @@ export const personal = `
 
 export const ending = `
     Any time I ain't coding, you can find me doing one of above.
-`
+`;

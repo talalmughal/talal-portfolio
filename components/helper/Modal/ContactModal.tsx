@@ -1,17 +1,48 @@
 import { options } from "@/constants/contact";
 import { Button } from "../Button";
 import { Modal } from "./Modal";
+import { useState, useEffect } from "react";
 
 interface Props {
   open: boolean;
   setOpen: () => void;
   index: number;
+  secondaryColor: string;
+  primaryText: string;
+  secondaryText: string;
 }
 
-export const ContactModal = ({ open, setOpen, index }: Props) => {
+export const ContactModal = ({
+  open,
+  setOpen,
+  index,
+  secondaryColor,
+  primaryText,
+  secondaryText,
+}: Props) => {
+  const [focusStyles, setFocusStyles] = useState(
+    "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#EEA47F] transition duration-300"
+  );
+
+  useEffect(() => {
+    setFocusStyles(
+      `${
+        secondaryColor === "#EEA47F"
+          ? "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#EEA47F] transition duration-300"
+          : secondaryColor === "#FEE715"
+          ? "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#FEE715] transition duration-300"
+          : secondaryColor === "#FCF6F5"
+          ? "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#FCF6F5] transition duration-300"
+          : secondaryColor === "#FBEAEB"
+          ? "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#FBEAEB] transition duration-300"
+          : "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#EEA47F] transition duration-300"
+      }`
+    );
+  }, [secondaryColor]);
+
   return (
     <Modal open={open} setOpen={setOpen}>
-      <div className="flex flex-col gap-6">
+      <div className={`flex flex-col gap-6 ${primaryText}`}>
         <div className="flex flex-row gap-8 items-center mb-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -30,7 +61,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
           <input
             type="text"
-            className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+            className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="Tim Berners-Lee"
           />
         </div>
@@ -40,7 +71,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
           <input
             type="email"
-            className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+            className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="you@example.com"
           />
         </div>
@@ -50,7 +81,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
           <input
             type="text"
-            className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+            className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="Google Inc."
           />
         </div>
@@ -62,7 +93,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
               <input
                 type="text"
-                className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
                 placeholder="$2,000 - $5,000"
               />
             </div>
@@ -73,7 +104,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
                 <input
                   type="date"
-                  className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                  className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
                   placeholder="$2,000 - $5,000"
                 />
               </div>
@@ -83,7 +114,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
 
                 <input
                   type="date"
-                  className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                  className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
                   placeholder="$2,000 - $5,000"
                 />
               </div>
@@ -95,7 +126,7 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
           <span className="text-lg font-medium">Message</span>
 
           <textarea
-            className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+            className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="I heard you were the best!"
           />
         </div>
@@ -104,8 +135,8 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
           <span className="text-lg font-medium">How did you find me?</span>
 
           <select
-            className="rounded-lg p-4 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
-            defaultValue="How did you find me?"
+            className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
+            placeholder="How did you find me?"
           >
             <option>How did you find me?</option>
             <option>We have worked together before</option>
@@ -129,7 +160,13 @@ export const ContactModal = ({ open, setOpen, index }: Props) => {
           </span>
         </div>
 
-        <Button text="Send message" />
+        <Button
+          text="Send message"
+          secondaryColor={secondaryColor}
+          primaryText={primaryText}
+          secondaryText={secondaryText}
+          inverted={true}
+        />
       </div>
     </Modal>
   );

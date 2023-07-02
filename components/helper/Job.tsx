@@ -20,20 +20,20 @@ export const Job = ({
   techs,
 }: Props) => {
   return (
-    <div className="bg-gray-900 p-4 2xl:p-6 flex flex-col gap-4">
+    <div className="bg-gray-200 p-4 2xl:p-6 flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <span className="text-white text-lg">
+        <span className="text-lg">
           {title} {company && "."} {company}
         </span>
 
-        <span className="text-gray-500">
+        <span className="">
           {level} {location && `(${location})`}
         </span>
 
-        <span className="text-gray-500">{timePeriod}</span>
+        <span className="">{timePeriod}</span>
       </div>
 
-      <span className="text-sm text-gray-400 -mt-1">{description}</span>
+      <span className="text-sm text-gray-600 -mt-1">{description}</span>
 
       {projects && projects?.length > 0 && (
         <div className="flex flex-wrap gap-4 text-sm font-medium">
@@ -51,7 +51,7 @@ export const Job = ({
       )}
 
       {techs && techs?.length > 0 && (
-        <div className="flex flex-wrap gap-2 text-sm">
+        <div className="flex flex-wrap gap-2 text-sm text-gray-600">
           {techs?.map((tech, i) => (
             <span key={i}>{tech}</span>
           ))}

@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { setPrimaryColor, setSecondaryColor } from "@/redux/themeSlice";
 
 const sections = [
   {
@@ -32,8 +30,42 @@ const sections = [
   },
 ];
 
-export default function Menu() {
-  const dispatch = useDispatch();
+interface Props {
+  secondaryColor: string;
+  primaryText: string;
+  secondaryText: string;
+  primaryBG: string;
+  secondaryBG: string;
+  setPrimaryColor: (args0: string) => void;
+  setSecondaryColor: (args0: string) => void;
+}
+
+export default function Menu({
+  secondaryColor,
+  primaryText,
+  secondaryText,
+  primaryBG,
+  secondaryBG,
+  setPrimaryColor,
+  setSecondaryColor,
+}: Props) {
+  const [borderColor, setBorderColor] = useState("border-[#FEE715]");
+
+  useEffect(() => {
+    setBorderColor(
+      `${
+        secondaryColor === "#EEA47F"
+          ? "border-[#EEA47F]"
+          : secondaryColor === "#FEE715"
+          ? "border-[#FEE715]"
+          : secondaryColor === "#FCF6F5"
+          ? "border-[#FCF6F5]"
+          : secondaryColor === "#FBEAEB"
+          ? "border-[#FBEAEB]"
+          : "border-[#EEA47F]"
+      }`
+    );
+  }, [secondaryColor]);
 
   return (
     <Popover className="relative">
@@ -41,7 +73,7 @@ export default function Menu() {
         <img
           src="img/burger.png"
           alt="burger"
-          className="p-2 w-16 h-16 rounded-full bg-gray-400 z-20 hover:animate-pulse"
+          className={`p-2 w-16 h-16 rounded-full ${secondaryBG} z-20 hover:animate-pulse`}
         />
       </Popover.Button>
 
@@ -55,11 +87,11 @@ export default function Menu() {
         leaveTo="opacity-0 translate-y-1"
       >
         <Popover.Panel className="absolute -left-10 -top-10 z-10 mt-5 flex w-96 max-w-max px-4">
-          <div className="w-screen max-w-md flex flex-col gap-8 overflow-hidden rounded-xl bg-gray-100">
+          <div
+            className={`w-screen max-w-md flex flex-col gap-8 overflow-hidden rounded-xl ${secondaryBG} ${primaryText}`}
+          >
             <div className="mt-9">
-              <span className="ml-28 text-2xl font-medium text-black">
-                Burger menu
-              </span>
+              <span className="ml-28 text-2xl font-medium">Burger menu</span>
             </div>
 
             <div className="px-4">
@@ -68,15 +100,12 @@ export default function Menu() {
                   key={section.name}
                   className="group relative flex items-center rounded-lg px-4 py-3 hover:bg-gray-50"
                 >
-                  <a
-                    href={section.href}
-                    className="flex flex-col gap-1 text-black"
-                  >
+                  <a href={section.href} className="flex flex-col gap-1">
                     <span className="text-lg font-semibold">
                       {section?.name}
                     </span>
 
-                    <span className="text-base font-medium text-gray-500">
+                    <span className={`text-base font-medium ${primaryText}`}>
                       {section?.description}
                     </span>
                   </a>
@@ -84,18 +113,22 @@ export default function Menu() {
               ))}
             </div>
 
-            <div className="-mt-4 pt-4 pb-6 px-8 flex flex-col gap-3 divide-x divide-gray-900/5 bg-gray-300">
-              <span className="text-lg font-semibold text-black">Themes</span>
+            <div
+              className={`-mt-4 pt-4 pb-6 px-8 flex flex-col gap-3 divide-x divide-gray-900/5 rounded-b-xl border-2 ${borderColor} ${primaryBG}`}
+            >
+              <span className={`text-lg font-semibold ${secondaryText}`}>
+                Themes
+              </span>
 
               <div className="flex flex-row gap-5">
                 <button
                   onClick={() => {
-                    dispatch(setPrimaryColor("#101820"));
-                    dispatch(setSecondaryColor("#FEE715"));
+                    setPrimaryColor("#00539C");
+                    setSecondaryColor("#EEA47F");
                   }}
                 >
                   <img
-                    src="img/themes/black-yellow.jpg"
+                    src="img/themes/blue-peach.jpg"
                     alt="theme1"
                     className="w-8 h-8 rounded-full"
                   />
@@ -103,12 +136,12 @@ export default function Menu() {
 
                 <button
                   onClick={() => {
-                    dispatch(setPrimaryColor("#990011"));
-                    dispatch(setSecondaryColor("#FCF6F5"));
+                    setPrimaryColor("#101820");
+                    setSecondaryColor("#FEE715");
                   }}
                 >
                   <img
-                    src="img/themes/red-white.jpg"
+                    src="img/themes/black-yellow.jpg"
                     alt="theme2"
                     className="w-8 h-8 rounded-full"
                   />
@@ -116,12 +149,12 @@ export default function Menu() {
 
                 <button
                   onClick={() => {
-                    dispatch(setPrimaryColor("#00539C"));
-                    dispatch(setSecondaryColor("#EEA47F"));
+                    setPrimaryColor("#2F3C7E");
+                    setSecondaryColor("#FBEAEB");
                   }}
                 >
                   <img
-                    src="img/themes/blue-peach.jpg"
+                    src="img/themes/blue-pink.jpg"
                     alt="theme3"
                     className="w-8 h-8 rounded-full"
                   />
@@ -129,12 +162,12 @@ export default function Menu() {
 
                 <button
                   onClick={() => {
-                    dispatch(setPrimaryColor("#2F3C7E"));
-                    dispatch(setSecondaryColor("#FBEAEB"));
+                    setPrimaryColor("#990011");
+                    setSecondaryColor("#FCF6F5");
                   }}
                 >
                   <img
-                    src="img/themes/blue-pink.jpg"
+                    src="img/themes/red-white.jpg"
                     alt="theme4"
                     className="w-8 h-8 rounded-full"
                   />
