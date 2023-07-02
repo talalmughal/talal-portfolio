@@ -1,3 +1,4 @@
+import { Button } from "../helper/Button";
 import { FooterLinks } from "../helper/FooterLinks";
 import Menu from "../helper/Menu";
 
@@ -18,7 +19,7 @@ export const Page1 = () => {
             interfaces, APIs, and databases - using modern web technologies.
           </span>
 
-          <span className="mt-6 text-lg">Let&#8217;s work together</span>
+          <Button text="Let&#8217;s work together" />
         </div>
 
         <div className="flex flex-col gap-2 text-gray-400 text-xs font-medium">

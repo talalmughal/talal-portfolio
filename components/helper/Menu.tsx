@@ -51,7 +51,7 @@ export default function Menu() {
         leaveTo="opacity-0 translate-y-1"
       >
         <Popover.Panel className="absolute -left-10 -top-10 z-10 mt-5 flex w-96 max-w-max px-4">
-          <div className="w-screen max-w-md flex flex-col gap-8 overflow-hidden rounded-xl bg-white">
+          <div className="w-screen max-w-md flex flex-col gap-8 overflow-hidden rounded-xl bg-gray-100">
             <div className="mt-9">
               <span className="ml-28 text-2xl font-medium text-black">
                 Burger menu
