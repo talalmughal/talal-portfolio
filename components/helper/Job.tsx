@@ -7,6 +7,7 @@ interface Props {
   description?: string;
   projects?: any[];
   techs?: string[];
+  primaryBG: string;
 }
 
 export const Job = ({
@@ -18,9 +19,10 @@ export const Job = ({
   description,
   projects,
   techs,
+  primaryBG,
 }: Props) => {
   return (
-    <div className="bg-gray-200 p-4 2xl:p-6 flex flex-col gap-4">
+    <div className="bg-gray-200 p-4 2xl:p-6 fhd:p-10 flex flex-col gap-4">
       <div className="flex flex-col gap-1">
         <span className="text-lg">
           {title} {company && "."} {company}
@@ -39,11 +41,7 @@ export const Job = ({
         <div className="flex flex-wrap gap-4 text-sm font-medium">
           {projects?.map((project, i) => (
             <div className="flex items-center gap-1" key={i}>
-              {project?.link && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src="/svg/link.svg" alt="link" className="h-4 mt-0.5" />
-              )}
-
+              <div className={`w-2 h-2 rounded-full ${primaryBG}`} />
               <span>{project?.name}</span>
             </div>
           ))}

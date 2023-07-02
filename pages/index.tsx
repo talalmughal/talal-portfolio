@@ -99,7 +99,7 @@ export default function Home() {
         <Page3 primaryText={primaryText} />
 
         {/* page-04 my experience */}
-        <Page4 primaryText={primaryText} />
+        <Page4 primaryText={primaryText} primaryBG={primaryBG} />
 
         {/* page-05 my reviews */}
         <Page5 primaryText={primaryText} secondaryBG={secondaryBG} />

@@ -14,7 +14,7 @@ export const Page6 = ({ primaryText, secondaryText }: Props) => {
 
         <span className="text-base">
           Swipe or drag to see a small selection of featured projects I&#8217;ve
-          worked on.
+          worked on. Click on any to experience it yourself.
         </span>
       </div>
 
