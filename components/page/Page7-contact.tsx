@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { description, headline, options } from "@/constants/contact";
 import { useState } from "react";
-import { HelloModal, WorkModal } from "../helper/Modal";
+import { ContactModal } from "../helper/Modal";
 
 export const Page7 = () => {
   const [index, setIndex] = useState<any>(null);
   const [showHelloModal, setShowHelloModal] = useState(false);
-  const [showWorkModal, setShowWorkModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="sm:h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
@@ -22,7 +22,7 @@ export const Page7 = () => {
         className="mt-8 flex flex-row gap-8 items-center"
         onClick={() => {
           setIndex(0);
-          setShowWorkModal(true);
+          setShowModal(true);
         }}
       >
         <img
@@ -38,7 +38,7 @@ export const Page7 = () => {
         className="flex flex-row gap-8 items-center"
         onClick={() => {
           setIndex(1);
-          setShowWorkModal(true);
+          setShowModal(true);
         }}
       >
         <img
@@ -52,7 +52,10 @@ export const Page7 = () => {
 
       <button
         className="flex flex-row gap-8 items-center"
-        onClick={() => setShowHelloModal(true)}
+        onClick={() => {
+          setIndex(2);
+          setShowModal(true);
+        }}
       >
         <img
           src={options[2]?.icon}
@@ -63,17 +66,10 @@ export const Page7 = () => {
         <span className="text-lg font-medium">{options[2]?.description}</span>
       </button>
 
-      {showHelloModal && (
-        <HelloModal
-          open={showHelloModal}
-          setOpen={() => setShowHelloModal(false)}
-        />
-      )}
-
-      {showWorkModal && (
-        <WorkModal
-          open={showWorkModal}
-          setOpen={() => setShowWorkModal(false)}
+      {showModal && (
+        <ContactModal
+          open={showModal}
+          setOpen={() => setShowModal(false)}
           index={index}
         />
       )}

@@ -8,7 +8,7 @@ interface Props {
   index: number;
 }
 
-export const WorkModal = ({ open, setOpen, index }: Props) => {
+export const ContactModal = ({ open, setOpen, index }: Props) => {
   return (
     <Modal open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-6">
@@ -55,37 +55,41 @@ export const WorkModal = ({ open, setOpen, index }: Props) => {
           />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <span className="text-lg font-medium">Budget</span>
+        {index !== 2 && (
+          <>
+            <div className="flex flex-col gap-2">
+              <span className="text-lg font-medium">Budget</span>
 
-          <input
-            type="text"
-            className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
-            placeholder="$2,000 - $5,000"
-          />
-        </div>
+              <input
+                type="text"
+                className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                placeholder="$2,000 - $5,000"
+              />
+            </div>
 
-        <div className="grid grid-flow-col gap-4">
-          <div className="flex flex-col gap-2">
-            <span className="text-lg font-medium">Start date</span>
+            <div className="grid grid-flow-col gap-4">
+              <div className="flex flex-col gap-2">
+                <span className="text-lg font-medium">Start date</span>
 
-            <input
-              type="date"
-              className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
-              placeholder="$2,000 - $5,000"
-            />
-          </div>
+                <input
+                  type="date"
+                  className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                  placeholder="$2,000 - $5,000"
+                />
+              </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-lg font-medium">End date</span>
+              <div className="flex flex-col gap-2">
+                <span className="text-lg font-medium">End date</span>
 
-            <input
-              type="date"
-              className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
-              placeholder="$2,000 - $5,000"
-            />
-          </div>
-        </div>
+                <input
+                  type="date"
+                  className="rounded-lg p-4 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 transition duration-300"
+                  placeholder="$2,000 - $5,000"
+                />
+              </div>
+            </div>
+          </>
+        )}
 
         <div className="flex flex-col gap-2">
           <span className="text-lg font-medium">Message</span>
