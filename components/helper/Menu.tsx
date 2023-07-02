@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPrimaryColor, setSecondaryColor } from "@/redux/themeSlice";
 
 const sections = [
   {
@@ -31,6 +33,8 @@ const sections = [
 ];
 
 export default function Menu() {
+  const dispatch = useDispatch();
+
   return (
     <Popover className="relative">
       <Popover.Button className="inline-flex focus-within:outline-none">
@@ -84,7 +88,12 @@ export default function Menu() {
               <span className="text-lg font-semibold text-black">Themes</span>
 
               <div className="flex flex-row gap-5">
-                <button onClick={() => {}}>
+                <button
+                  onClick={() => {
+                    dispatch(setPrimaryColor("#101820"));
+                    dispatch(setSecondaryColor("#FEE715"));
+                  }}
+                >
                   <img
                     src="img/themes/black-yellow.jpg"
                     alt="theme1"
@@ -92,7 +101,12 @@ export default function Menu() {
                   />
                 </button>
 
-                <button onClick={() => {}}>
+                <button
+                  onClick={() => {
+                    dispatch(setPrimaryColor("#990011"));
+                    dispatch(setSecondaryColor("#FCF6F5"));
+                  }}
+                >
                   <img
                     src="img/themes/red-white.jpg"
                     alt="theme2"
@@ -100,7 +114,12 @@ export default function Menu() {
                   />
                 </button>
 
-                <button onClick={() => {}}>
+                <button
+                  onClick={() => {
+                    dispatch(setPrimaryColor("#00539C"));
+                    dispatch(setSecondaryColor("#EEA47F"));
+                  }}
+                >
                   <img
                     src="img/themes/blue-peach.jpg"
                     alt="theme3"
@@ -108,7 +127,12 @@ export default function Menu() {
                   />
                 </button>
 
-                <button onClick={() => {}}>
+                <button
+                  onClick={() => {
+                    dispatch(setPrimaryColor("#2F3C7E"));
+                    dispatch(setSecondaryColor("#FBEAEB"));
+                  }}
+                >
                   <img
                     src="img/themes/blue-pink.jpg"
                     alt="theme4"

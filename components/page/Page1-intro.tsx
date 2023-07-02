@@ -1,16 +1,27 @@
+import { useSelector } from "react-redux";
 import { Button } from "../helper/Button";
 import { FooterLinks } from "../helper/FooterLinks";
 import Menu from "../helper/Menu";
 
 /* eslint-disable @next/next/no-img-element */
 export const Page1 = () => {
+  // const secondaryColor = "#FEE715";
+
+  const secondaryColor: string = useSelector(
+    (state: any) => state.theme.secondaryColor
+  );
+
+  console.log("secondaryColor: ", secondaryColor);
+
   return (
     <div className="xl:w-1/2 h-screen">
       <div className="xl:fixed flex flex-col justify-between h-full p-8 sm:p-20">
         <Menu />
 
         <div className="flex flex-col gap-6 max-w-xl">
-          <span className="text-2xl leading-relaxed sm:text-3xl md:text-[40px] md:leading-snug font-semibold">
+          <span
+            className={`text-2xl leading-relaxed sm:text-3xl md:text-[40px] md:leading-snug font-semibold text-[${secondaryColor}]`}
+          >
             Hello. I&#8217;m a professional and freelance full-stack engineer
           </span>
 
