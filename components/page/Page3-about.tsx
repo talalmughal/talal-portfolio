@@ -6,8 +6,8 @@ interface Props {
 
 export const Page3 = ({ primaryText }: Props) => {
   return (
-    <div className={`bg-gray-100 ${primaryText}`}>
-      <div className="sm:h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
+    <div id="about" className={`bg-gray-100 ${primaryText}`}>
+      <div className="h-auto min-h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
         <span className="text-3xl font-semibold">About me</span>
 
         <span className="text-2xl leading-8 font-medium">{general}</span>

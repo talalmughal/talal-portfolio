@@ -1,7 +1,7 @@
 export const general = `
     I enjoy working closely with design teams to precisely translate their
     designs right down to the last pixel, bringing the process to life just
-    as they intended them to be, while maintaining the functionalities at 
+    as they intended them to be, while developing the backend functionalities at 
     their finest.
 `;
 

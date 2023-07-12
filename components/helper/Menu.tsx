@@ -6,27 +6,27 @@ const sections = [
   {
     name: "About",
     description: "Delicately tender with a slice of cheese.",
-    href: "#",
+    id: "about",
   },
   {
     name: "Experience",
     description: "Our great selection from best in town.",
-    href: "#",
+    id: "experience",
   },
   {
     name: "References",
     description: "Hear what our happy customers say.",
-    href: "#",
+    id: "reviews",
   },
   {
     name: "Projects",
     description: "Served on a bed of delicious tech.",
-    href: "#",
+    id: "projects",
   },
   {
     name: "Contact",
     description: "A superb choice to finish the day.",
-    href: "#",
+    id: "contact",
   },
 ];
 
@@ -100,7 +100,15 @@ export default function Menu({
                   key={section.name}
                   className="group relative flex items-center rounded-lg px-4 py-3 hover:bg-gray-50"
                 >
-                  <a href={section.href} className="flex flex-col gap-1">
+                  <button
+                    className="flex flex-col gap-1"
+                    onClick={() => {
+                      // @ts-ignore
+                      document
+                        .getElementById(section.id)
+                        .scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
                     <span className="text-lg font-semibold">
                       {section?.name}
                     </span>
@@ -108,7 +116,7 @@ export default function Menu({
                     <span className={`text-base font-medium ${primaryText}`}>
                       {section?.description}
                     </span>
-                  </a>
+                  </button>
                 </div>
               ))}
             </div>

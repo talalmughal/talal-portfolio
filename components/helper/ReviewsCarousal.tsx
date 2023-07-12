@@ -22,7 +22,7 @@ export const ReviewsCarousal = () => {
   return (
     <>
       <button
-        className="absolute -left-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
+        className="absolute -left-10 sm:-left-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
         onClick={() => emblaApi?.scrollPrev(true)}
       >
         <svg
@@ -60,7 +60,7 @@ export const ReviewsCarousal = () => {
                   className="w-14 h-14 rounded-full"
                 />
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5">
                   <span className="text-lg font-medium">{review?.person}</span>
 
                   <span>{review?.origin}</span>
@@ -72,7 +72,7 @@ export const ReviewsCarousal = () => {
       </div>
 
       <button
-        className="absolute -right-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
+        className="absolute -right-10 sm:-right-14 w-10 h-10 rounded-full hover:bg-white/40 transition duration-200 ease-in-out active:bg-white/60 focus:outline-none flex items-center justify-center"
         onClick={() => emblaApi?.scrollNext(true)}
       >
         <svg

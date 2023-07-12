@@ -22,6 +22,13 @@ export const Page1 = ({
   setPrimaryColor,
   setSecondaryColor,
 }: Props) => {
+  const clickHandler = () => {
+    if (document) {
+      // @ts-ignore
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={`xl:w-1/2 h-screen ${primaryBG}`}>
       <div className="xl:fixed flex flex-col justify-between h-full p-8 sm:p-20">
@@ -45,12 +52,14 @@ export const Page1 = ({
             interfaces, APIs, and databases - using modern web technologies.
           </span>
 
-          <Button
-            text="Let&#8217;s work together"
-            secondaryColor={secondaryColor}
-            primaryText={primaryText}
-            secondaryText={secondaryText}
-          />
+          <div className="w-fit" onClick={() => clickHandler()}>
+            <Button
+              text="Let&#8217;s work together"
+              secondaryColor={secondaryColor}
+              primaryText={primaryText}
+              secondaryText={secondaryText}
+            />
+          </div>
         </div>
 
         <div

@@ -4,7 +4,7 @@ export const Page2 = () => {
     <img
       src="img/profile-picture.jpg"
       alt="profile-picture"
-      className="xl:h-screen w-full"
+      className="h-auto xl:h-screen w-full"
     />
   );
 };

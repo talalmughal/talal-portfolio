@@ -20,8 +20,8 @@ export const Page7 = ({
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className={`bg-gray-200 -mt-0.5 ${primaryText}`}>
-      <div className="sm:h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
+    <div id="contact" className={`bg-gray-200 -mt-0.5 ${primaryText}`}>
+      <div className="h-auto min-h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
         <span className="text-3xl font-semibold">Contact me</span>
 
         <div className="flex flex-col gap-2">

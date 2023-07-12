@@ -9,7 +9,8 @@ interface Props {
 export const Page4 = ({ primaryText, primaryBG }: Props) => {
   return (
     <div
-      className={`grid md:grid-cols-2 md:grid-rows-2 p-2 xl:px-0 fhd:py-4 gap-2 fhd:gap-4 h-auto 1.5xl:h-screen ${primaryText}`}
+      id="experience"
+      className={`grid md:grid-cols-2 md:grid-rows-2 p-2 xl:px-0 fhd:py-4 gap-2 fhd:gap-4 h-auto min-h-screen ${primaryText}`}
     >
       {jobs?.map((job, i) => (
         <Job

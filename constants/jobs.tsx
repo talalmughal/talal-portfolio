@@ -5,7 +5,7 @@ export const jobs = [
     company: "AuraSide, Inc.",
     level: "Mid-level Engineer",
     location: "Remote . USA",
-    timePeriod: "Feb 2022 - PRESENT",
+    timePeriod: "Jan 2022 - Jul 2023",
     description: `Gaming oriented and product-based company that develops 
     tools for gamers. Responsibilities included delivering high-quality 
     code for a diverse array of products (web and desktop). From converting
