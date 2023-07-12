@@ -29,7 +29,7 @@ export const reviews = [
     Icon: "img/reviews/oman.png",
   },
   {
-    comment: `asdf`,
+    comment: `{Yet to add}`,
     person: "Stanley Day",
     origin: "Founder and CEO at AuraSide, Inc.",
     Icon: "img/reviews/auraside.jpeg",
