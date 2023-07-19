@@ -2,6 +2,10 @@ import { options } from "@/constants/contact";
 import { Button } from "../Button";
 import { Modal } from "./Modal";
 import { useState, useEffect } from "react";
+import { createMail } from "@/firebase";
+import { ToastContainer } from "react-toastify";
+import { Slide, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Props {
   open: boolean;
@@ -23,6 +27,14 @@ export const ContactModal = ({
   const [focusStyles, setFocusStyles] = useState(
     "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#EEA47F] transition duration-300"
   );
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [budget, setBudget] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [message, setMessage] = useState("");
+  const [find, setFind] = useState("");
 
   useEffect(() => {
     setFocusStyles(
@@ -39,6 +51,24 @@ export const ContactModal = ({
       }`
     );
   }, [secondaryColor]);
+
+  const clickHandler = async () => {
+    const response = await createMail({ name, email, company, budget, startDate, endDate, message, find });
+    if (response) {
+      setOpen();
+      toast.success("Email sent", {
+        toastId: "success1",
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
 
   return (
     <Modal open={open} setOpen={setOpen}>
@@ -63,6 +93,7 @@ export const ContactModal = ({
             type="text"
             className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="Tim Berners-Lee"
+            onChange={(e) => setName(e?.target?.value)}
           />
         </div>
 
@@ -73,6 +104,7 @@ export const ContactModal = ({
             type="email"
             className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="you@example.com"
+            onChange={(e) => setEmail(e?.target?.value)}
           />
         </div>
 
@@ -83,6 +115,7 @@ export const ContactModal = ({
             type="text"
             className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="Google Inc."
+            onChange={(e) => setCompany(e?.target?.value)}
           />
         </div>
 
@@ -95,6 +128,7 @@ export const ContactModal = ({
                 type="text"
                 className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
                 placeholder="$2,000 - $5,000"
+                onChange={(e) => setBudget(e?.target?.value)}
               />
             </div>
 
@@ -105,7 +139,7 @@ export const ContactModal = ({
                 <input
                   type="date"
                   className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
-                  placeholder="$2,000 - $5,000"
+                  onChange={(e) => setStartDate(e?.target?.value)}
                 />
               </div>
 
@@ -115,7 +149,7 @@ export const ContactModal = ({
                 <input
                   type="date"
                   className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
-                  placeholder="$2,000 - $5,000"
+                  onChange={(e) => setEndDate(e?.target?.value)}
                 />
               </div>
             </div>
@@ -128,6 +162,7 @@ export const ContactModal = ({
           <textarea
             className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="I heard you were the best!"
+            onChange={(e) => setMessage(e?.target?.value)}
           />
         </div>
 
@@ -137,6 +172,7 @@ export const ContactModal = ({
           <select
             className={`rounded-lg p-4 placeholder:text-gray-400 ${focusStyles}`}
             placeholder="How did you find me?"
+            onChange={(e) => setFind(e?.target?.value)}
           >
             <option>How did you find me?</option>
             <option>We have worked together before</option>
@@ -160,12 +196,31 @@ export const ContactModal = ({
           </span>
         </div>
 
-        <Button
-          text="Send message"
-          secondaryColor={secondaryColor}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
-          inverted={true}
+        <div className="w-fit" onClick={() => clickHandler()}>
+          <Button
+            text="Send message"
+            secondaryColor={secondaryColor}
+            primaryText={primaryText}
+            secondaryText={secondaryText}
+            inverted={true}
+          />
+        </div>
+      </div>
+
+      <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          transition={Slide}
+          limit={1}
         />
       </div>
     </Modal>
