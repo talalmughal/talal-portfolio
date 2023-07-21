@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../helper/Button";
 import { FooterLinks } from "../helper/FooterLinks";
 import Menu from "../helper/Menu";
@@ -87,7 +88,9 @@ export const Page1 = ({
             />
           </div>
 
-          <span>Download my resume (PDF 469KB)</span>
+          <Link href="/Talal_Nasir-Resume.pdf" target="_blank" download>
+            Download my resume <span className="text-white">(PDF 28KB)</span>
+          </Link>
         </div>
       </div>
     </div>
