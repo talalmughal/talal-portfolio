@@ -1,5 +1,13 @@
 export const reviews = [
   {
+    comment: `Talal is a hard working, communicative, trustworthy, and energetic software 
+    engineer who will breath new life into any team. Working with him has been a pleasure 
+    and he has a bright career ahead of him.`,
+    person: "Stanley Day",
+    origin: "Founder and CEO at AuraSide, Inc.",
+    Icon: "img/reviews/auraside.jpeg",
+  },
+  {
     comment: `We highly recommend Talal Nasir for a Full Stack Engineering role. His 
     strong work ethic, discipline & excellent communication skills make him a valuable 
     asset to any team.`,
@@ -27,11 +35,5 @@ export const reviews = [
     person: "Shaxwar",
     origin: "Oman",
     Icon: "img/reviews/oman.png",
-  },
-  {
-    comment: `{Yet to add}`,
-    person: "Stanley Day",
-    origin: "Founder and CEO at AuraSide, Inc.",
-    Icon: "img/reviews/auraside.jpeg",
   },
 ];
