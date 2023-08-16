@@ -32,7 +32,7 @@ export const Page1 = ({
 
   return (
     <div className={`xl:w-1/2 h-screen ${primaryBG}`}>
-      <div className="xl:fixed flex flex-col justify-between h-full p-8 sm:p-20">
+      <div className="xl:fixed flex flex-col justify-between h-full w- p-8 sm:p-20">
         <Menu
           secondaryColor={secondaryColor}
           primaryText={primaryText}
