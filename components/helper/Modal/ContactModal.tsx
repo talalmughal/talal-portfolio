@@ -6,6 +6,7 @@ import { createMail } from "@/firebase";
 import { ToastContainer } from "react-toastify";
 import { Slide, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 
 interface Props {
   open: boolean;
@@ -74,11 +75,12 @@ export const ContactModal = ({
     <Modal open={open} setOpen={setOpen}>
       <div className={`flex flex-col gap-6 ${primaryText}`}>
         <div className="flex flex-row gap-8 items-center mb-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={options[index]?.icon}
-            alt="icon"
+            width={64}
+            height={64}
             className="p-2 w-16 h-16 rounded-full bg-gray-400"
+            alt="icon"
           />
 
           <span className="text-lg font-medium">

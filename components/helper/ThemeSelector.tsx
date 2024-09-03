@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {
   alt: string;
   primaryColor: string;
@@ -23,11 +25,12 @@ export const ThemeSelector = ({
         setSecondaryColor(secondaryColor);
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`img/themes/${themeName}.jpg`}
-        alt={alt}
+      <Image
+        src={`/img/themes/${themeName}.jpg`}
+        width={32}
+        height={32}
         className="w-8 h-8 rounded-full"
+        alt={alt}
       />
     </button>
   );

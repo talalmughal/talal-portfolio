@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { reviews } from "@/constants/reviews";
+import Image from "next/image";
 
 export const ReviewsCarousal = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -53,11 +54,12 @@ export const ReviewsCarousal = () => {
               </span>
 
               <div className="mt-8 flex flex-row items-center gap-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={review?.Icon}
-                  alt="logo"
+                  width={56}
+                  height={56}
                   className="w-14 h-14 rounded-full"
+                  alt="logo"
                 />
 
                 <div className="flex flex-col gap-1.5">

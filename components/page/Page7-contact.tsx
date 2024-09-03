@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { description, headline, options } from "@/constants/contact";
 import { useState } from "react";
 import { ContactModal } from "../helper/Modal";

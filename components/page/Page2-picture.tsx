@@ -1,10 +1,15 @@
+import Image from "next/image";
+
 export const Page2 = () => {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src="img/profile-picture.jpg"
-      alt="profile-picture"
+    <Image
+      src="/img/profile-picture.jpg"
+      width={1600}
+      height={1600}
+      priority
       className="h-auto xl:h-screen w-full"
+      style={{ backgroundPosition: "cover" }}
+      alt="profile-picture"
     />
   );
 };

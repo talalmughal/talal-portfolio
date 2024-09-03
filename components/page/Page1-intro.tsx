@@ -13,7 +13,6 @@ interface Props {
   setSecondaryColor: (args0: string) => void;
 }
 
-/* eslint-disable @next/next/no-img-element */
 export const Page1 = ({
   secondaryColor,
   primaryText,
@@ -78,13 +77,13 @@ export const Page1 = ({
             <FooterLinks
               Icon="/svg/github.svg"
               alt="github"
-              link="https://github.com/talalmughal"
+              link="https://github.com/talal-webook"
             />
 
             <FooterLinks
               Icon="/svg/github.svg"
               alt="github"
-              link="https://github.com/talal-webook"
+              link="https://github.com/talalmughal"
             />
 
             <FooterLinks

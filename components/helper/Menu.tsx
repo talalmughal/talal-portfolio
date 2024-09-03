@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ThemeSelector } from "./ThemeSelector";
+import Image from "next/image";
 
 const sections = [
   {
@@ -71,10 +71,12 @@ export default function Menu({
   return (
     <Popover className="relative">
       <Popover.Button className="inline-flex focus-within:outline-none">
-        <img
-          src="img/burger.png"
-          alt="burger"
+        <Image
+          src="/img/burger.png"
+          width={64}
+          height={64}
           className={`p-2 w-16 h-16 rounded-full ${secondaryBG} z-20 hover:animate-pulse`}
+          alt="burger"
         />
       </Popover.Button>
 

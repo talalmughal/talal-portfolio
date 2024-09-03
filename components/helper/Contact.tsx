@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {
   index: number;
   option: {
@@ -24,11 +26,12 @@ export const Contact = ({
         setShowModal(true);
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={`/${option?.icon}`}
-        alt="icon"
+        width={64}
+        height={64}
         className={`p-2 w-16 h-16 rounded-full ${primaryBG} transition-transform hover:scale-125 ease-in`}
+        alt="icon"
       />
 
       <span className="text-lg font-medium hover:underline">

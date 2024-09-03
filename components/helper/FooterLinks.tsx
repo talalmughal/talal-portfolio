@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import { Slide, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +18,13 @@ export const FooterLinks = ({ Icon, alt, link }: Props) => {
           target="blank"
           className="transition-transform hover:scale-125 ease-in"
         >
-          <img src={Icon} className="w-6 cursor-pointer" alt={alt} />
+          <Image
+            src={Icon}
+            width={24}
+            height={24}
+            className="w-6 h-6 cursor-pointer"
+            alt={alt}
+          />
         </a>
       ) : (
         <button
@@ -39,7 +45,13 @@ export const FooterLinks = ({ Icon, alt, link }: Props) => {
             });
           }}
         >
-          <img src={Icon} className="w-6 h-6 cursor-pointer" alt={alt} />
+          <Image
+            src={Icon}
+            width={24}
+            height={24}
+            className="w-6 h-6 cursor-pointer"
+            alt={alt}
+          />
         </button>
       )}
 
