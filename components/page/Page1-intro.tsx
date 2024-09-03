@@ -70,9 +70,21 @@ export const Page1 = ({
             <span>Find me here:</span>
 
             <FooterLinks
+              Icon="/svg/gmail.svg"
+              alt="gmail"
+              link="mailto:talalmughal47@gmail.com"
+            />
+
+            <FooterLinks
               Icon="/svg/github.svg"
               alt="github"
               link="https://github.com/talalmughal"
+            />
+
+            <FooterLinks
+              Icon="/svg/github.svg"
+              alt="github"
+              link="https://github.com/talal-webook"
             />
 
             <FooterLinks
@@ -88,8 +100,8 @@ export const Page1 = ({
             />
           </div>
 
-          <Link href="/Talal_Nasir-Resume.pdf" target="_blank" download>
-            Download my resume <span className="text-white">(PDF 28KB)</span>
+          <Link href="/Talal-Nasir-Resume.pdf" target="_blank" download>
+            Download my resume <span className="text-white">(PDF 213 KB)</span>
           </Link>
         </div>
       </div>

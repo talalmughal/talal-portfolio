@@ -13,12 +13,17 @@ export const FooterLinks = ({ Icon, alt, link }: Props) => {
   return (
     <>
       {alt !== "discord" ? (
-        <a href={link} target="blank">
+        <a
+          href={link}
+          target="blank"
+          className="transition-transform hover:scale-125 ease-in"
+        >
           <img src={Icon} className="w-6 cursor-pointer" alt={alt} />
         </a>
       ) : (
         <button
           type="button"
+          className="transition-transform hover:scale-125 ease-in"
           onClick={() => {
             navigator.clipboard.writeText(link);
             toast.success("Username Copied", {

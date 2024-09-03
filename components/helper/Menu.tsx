@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import { ThemeSelector } from "./ThemeSelector";
 
 const sections = [
   {
@@ -113,7 +114,9 @@ export default function Menu({
                       {section?.name}
                     </span>
 
-                    <span className={`text-base font-medium ${primaryText}`}>
+                    <span
+                      className={`text-base font-medium text-left ${primaryText}`}
+                    >
                       {section?.description}
                     </span>
                   </button>
@@ -129,57 +132,41 @@ export default function Menu({
               </span>
 
               <div className="flex flex-row gap-5">
-                <button
-                  onClick={() => {
-                    setPrimaryColor("#00539C");
-                    setSecondaryColor("#EEA47F");
-                  }}
-                >
-                  <img
-                    src="img/themes/blue-peach.jpg"
-                    alt="theme1"
-                    className="w-8 h-8 rounded-full"
-                  />
-                </button>
+                <ThemeSelector
+                  alt="theme1"
+                  primaryColor="#00539C"
+                  secondaryColor="#EEA47F"
+                  themeName="blue-peach"
+                  setPrimaryColor={setPrimaryColor}
+                  setSecondaryColor={setSecondaryColor}
+                />
 
-                <button
-                  onClick={() => {
-                    setPrimaryColor("#101820");
-                    setSecondaryColor("#FEE715");
-                  }}
-                >
-                  <img
-                    src="img/themes/black-yellow.jpg"
-                    alt="theme2"
-                    className="w-8 h-8 rounded-full"
-                  />
-                </button>
+                <ThemeSelector
+                  alt="theme2"
+                  primaryColor="#101820"
+                  secondaryColor="#FEE715"
+                  themeName="black-yellow"
+                  setPrimaryColor={setPrimaryColor}
+                  setSecondaryColor={setSecondaryColor}
+                />
 
-                <button
-                  onClick={() => {
-                    setPrimaryColor("#2F3C7E");
-                    setSecondaryColor("#FBEAEB");
-                  }}
-                >
-                  <img
-                    src="img/themes/blue-pink.jpg"
-                    alt="theme3"
-                    className="w-8 h-8 rounded-full"
-                  />
-                </button>
+                <ThemeSelector
+                  alt="theme3"
+                  primaryColor="#2F3C7E"
+                  secondaryColor="#FBEAEB"
+                  themeName="blue-pink"
+                  setPrimaryColor={setPrimaryColor}
+                  setSecondaryColor={setSecondaryColor}
+                />
 
-                <button
-                  onClick={() => {
-                    setPrimaryColor("#990011");
-                    setSecondaryColor("#FCF6F5");
-                  }}
-                >
-                  <img
-                    src="img/themes/red-white.jpg"
-                    alt="theme4"
-                    className="w-8 h-8 rounded-full"
-                  />
-                </button>
+                <ThemeSelector
+                  alt="theme4"
+                  primaryColor="#990011"
+                  secondaryColor="#FCF6F5"
+                  themeName="red-white"
+                  setPrimaryColor={setPrimaryColor}
+                  setSecondaryColor={setSecondaryColor}
+                />
               </div>
             </div>
           </div>

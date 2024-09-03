@@ -2,6 +2,7 @@
 import { description, headline, options } from "@/constants/contact";
 import { useState } from "react";
 import { ContactModal } from "../helper/Modal";
+import { Contact } from "../helper/Contact";
 
 interface Props {
   secondaryColor: string;
@@ -24,59 +25,22 @@ export const Page7 = ({
       <div className="h-auto min-h-screen p-8 sm:p-20 flex flex-col gap-8 max-w-3xl">
         <span className="text-3xl font-semibold">Contact me</span>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mb-8">
           <span className="text-2xl leading-8 font-medium">{headline}</span>
 
           <span className="text-base">{description}</span>
         </div>
 
-        <button
-          className="mt-8 flex flex-row gap-8 items-center"
-          onClick={() => {
-            setIndex(0);
-            setShowModal(true);
-          }}
-        >
-          <img
-            src={options[0]?.icon}
-            alt="icon"
-            className={`p-2 w-16 h-16 rounded-full ${primaryBG}`}
+        {options?.map((item, idx) => (
+          <Contact
+            key={idx}
+            index={idx}
+            option={item}
+            primaryBG={primaryBG}
+            setIndex={setIndex}
+            setShowModal={setShowModal}
           />
-
-          <span className="text-lg font-medium">{options[0]?.description}</span>
-        </button>
-
-        <button
-          className="flex flex-row gap-8 items-center"
-          onClick={() => {
-            setIndex(1);
-            setShowModal(true);
-          }}
-        >
-          <img
-            src={options[1]?.icon}
-            alt="icon"
-            className={`p-2 w-16 h-16 rounded-full ${primaryBG}`}
-          />
-
-          <span className="text-lg font-medium">{options[1]?.description}</span>
-        </button>
-
-        <button
-          className="flex flex-row gap-8 items-center"
-          onClick={() => {
-            setIndex(2);
-            setShowModal(true);
-          }}
-        >
-          <img
-            src={options[2]?.icon}
-            alt="icon"
-            className={`p-2 w-16 h-16 rounded-full ${primaryBG}`}
-          />
-
-          <span className="text-lg font-medium">{options[2]?.description}</span>
-        </button>
+        ))}
 
         {showModal && (
           <ContactModal
